@@ -9,7 +9,7 @@ var config = require('../configurations');
 
 var numberOfSites = config.sites.length + 1;
 
-/* FIELDS: guid(key), type(assets or notes), method(add or delete), data(json data), siteStatus
+/* FIELDS: key, type(assets or notes), method(add or delete), data(json data), siteStatus
 *   SiteStatus object: [true or false(currentSite), true or false(site2), etc ...]
 */
 var transactionData = [];
