@@ -9,20 +9,25 @@ The API has two endpoints: /assets & /notes.  Both endpoints are accessible thro
 Users can interect with the /assets api with:
 
 * /add
+
     Add takes two parameters.  uri and name.
     ex. http://localhost:3000/assets/add?uri=myorg://users/gwashington&name=george washinton
 * /get
+
     Get will respond with all assets if no paramaters is sent.  If the uri field is sent it will search the assets for the one requested.
     ex. http://localhost:3000/assets/get?uri=myorg://users/gwashington
 * /delete
+
     Delete takes one parameter.  uri
     ex. http://localhost:3000/assets/delete?uri=myorg://users/gwashington
 
 users can interact with the notes api with:
 * /add
+
     Add takes two parameters.  uri and name.
     ex. http://localhost:3000/notes/add?uri=myorg://users/gwashington&note=george washinton was the first president
 * /get
+
     Get will respond with all assets if no paramaters is sent.  If the uri field is sent it will search the assets for the one requested.
     ex. http://localhost:3000/notes/get?uri=myorg://users/gwashington
 
