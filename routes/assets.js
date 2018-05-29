@@ -66,5 +66,4 @@ function deleteAsset(uri) {
     }
 }
 
-
 module.exports = router;
