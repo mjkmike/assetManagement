@@ -1,6 +1,17 @@
 # assetManagement
 This node project allows for an uninterupted intranet service to manage assets and asset notes across sites.  An asset in this case is a URI & name while a note is a URI & a note.
 
+## Instructions
+
+To install and run:
+* clone application to directory via git.
+* run: npm i
+* run npm start
+
+to test:
+* Open an additional terminal window
+* while application is still running run: npm test
+
 
 ## Application design
 The application was written using in memory data store as opposed to databases; however, given more time a proper database would be far more ideal.  
