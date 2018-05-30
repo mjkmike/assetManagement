@@ -6,9 +6,9 @@ This node project allows for an uninterrupted intranet service to manage assets 
 To install and run:
 * clone application to directory via git.
 * run: npm i
-* run npm start
+* run: npm start
 
-to test:
+To test:
 * Open an additional terminal window
 * while application is still running run: npm test
 
