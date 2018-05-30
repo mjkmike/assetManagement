@@ -38,6 +38,14 @@ exports.getTransactions = function() {
     return transactionData;
 }
 
+exports.deleteTransaction = function(key) {
+    transactionData.forEach(function (value, index) {
+        if( value.key === key ) {
+            transactionData.splice(index, 1);
+        }
+    });
+}
+
 // mostly random guids for this use case.  Let DB handle this normally
 function guid() {
     function s4() {

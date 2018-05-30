@@ -15,16 +15,18 @@ var job = new CronJob('1 * * * * *', function () {
     var currentTransactions = myTransactions.getTransactions();
     currentTransactions.forEach(function(value, index) {
         var i;
-        removeTransaction = false;
+        removeTransaction = true;
         for (i = 1; i < value.siteStatus.length; i ++) {
             if (value.siteStatus[i] === false) {
+                removeTransaction = false;
                 var siteURI = 'http://' + config.sites[i - 1].ip + ':' + config.sites[i - 1].port + '/' + value.type + '/' + value.method
                 sendRequest(siteURI, value.data)
             }
         }
+        if( removeTransaction ) {
+            myTransactions.removeTransaction(value.key);
+        }
     });
-
-
     }, function () {
         /* This function is executed when the job stops */
     },
