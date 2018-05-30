@@ -7,7 +7,7 @@ The application was written using in memory data store as opposed to databases; 
 
 Please see asset_management_diagram.pdf for a design.  Multiple asset management APIs can be deployed both internally and externaly of the intranet.  Two types of databases are used in this design.  One for handling assets and notes.  The second data store type manages transactions.  Each application should have a database for its individual transactions.  APIs within the same intranet will not need to configure the transaction handling as they will all use the same asset datastore. 
 
-Each update(add or delete) is tracked via a transaction database.  This is synced across sites via a cron job which happens once a minute.
+Each update(add or delete) is tracked via a transaction database.  This is synced across sites via a cron job which happens once a minute.  Once the transactions have been synced the cron will remove the uneeded transactions from the data store.  
 
 ## Database Designed
 Please see database_design.pdf for the database design.  The application manages the assets and notes in seperate tables within the assets database.  The assets table contains the uri & name of the asset.  The notes table contains the uri & note.  The transaction database is slightly more complex and takes key, type(assets or notes), method(add or delete), data(json data), siteStatus(array of truthy values).
